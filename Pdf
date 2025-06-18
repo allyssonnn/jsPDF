@@ -1,0 +1,68 @@
+from fpdf import FPDF
+
+pdf = FPDF()
+pdf.set_auto_page_break(auto=True, margin=15)
+pdf.add_page()
+
+pdf.set_font("Arial", 'B', 16)
+pdf.cell(0, 10, "Checklists de Venda Rápida", ln=True, align='C')
+pdf.ln(10)
+
+pdf.set_font("Arial", 'B', 14)
+pdf.cell(0, 10, "Checklist 1: Modelo de PDF para Editar", ln=True)
+pdf.set_font("Arial", '', 12)
+pdf.multi_cell(0, 10, '''Título:
+[Promessa direta - exemplo: "Como fiz R$6.424 em 2 horas com um PDF e prints"]
+
+Introdução:
+- Quem é você
+- O que você descobriu
+- O que o leitor vai aprender
+
+Parte 1: A Situação Atual / Erro Comum
+- Descreva o problema ou erro que a maioria comete
+
+Parte 2: A Solução
+- Explique seu método em 3 ou 4 passos
+
+Parte 3: A Aplicação
+- Dê um passo a passo prático
+
+Encerramento:
+- Chamada para ação (mentoria, grupo, outro produto)
+''')
+
+pdf.set_font("Arial", 'B', 14)
+pdf.cell(0, 10, "Checklist 2: Roteiro de Stories com CTA", ln=True)
+pdf.set_font("Arial", '', 12)
+pdf.multi_cell(0, 10, '''1. Story 1 - Prova
+- Print com legenda:
+  "Fiz R$6.424 com um PDF + prints em 2 horas"
+
+2. Story 2 - Autoridade
+- Vídeo seu falando:
+  "Fiz um material mostrando exatamente como. É prático. Quem quiser, me chama."
+
+3. Story 3 - Gatilho
+- Texto com fundo escuro:
+  "Liberando só para 25 pessoas. Me chama no DM com a palavra PDF."
+
+4. Story 4 - Depoimento (opcional)
+- Print de alguém que comprou ou aplicou
+''')
+
+pdf.set_font("Arial", 'B', 14)
+pdf.cell(0, 10, "Checklist 3: Modelo de Conversa no Direct", ln=True)
+pdf.set_font("Arial", '', 12)
+pdf.multi_cell(0, 10, '''Pessoa: "PDF"
+
+Você:
+"Top! Me conta seu nível hoje: já vende algo ou tá começando?"
+
+Depois da resposta:
+
+"Esse PDF mostra o exato passo a passo que usei pra vender rápido só com o celular. É direto e prático. Valor: R$256,99. Pix ou link de pagamento. Te envio na hora. Fechamos?"
+''')
+
+pdf.output("Checklist_Venda_Rapida.pdf")
+print("PDF gerado com sucesso!")
